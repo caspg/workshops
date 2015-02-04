@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 
 gem 'pg'
-gem 'rails_12factor'
 gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'
@@ -37,3 +36,7 @@ group :test do
 end
 
 ruby '2.1.5'
+
+group :production do
+  gem 'rails_12factor'
+end
