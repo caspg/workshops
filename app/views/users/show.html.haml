@@ -1,4 +1,3 @@
-
 .col-md-8.col-md-offset-2.profile
   .row
     .col-md-3
@@ -14,5 +13,18 @@
     .col-md-4
       %h4= pluralize(@user.reviews.count, "review")
 
+.col-md-6.col-md-offset-2.reviews-list
+  %h4= @user.firstname.titleize + "'s last reviews"
+  - @reviews.each do |review|
+    %table.table.table-bordered
+      %tr
+        %td 
+          %span= "product: #{review.product.title}"
+          %span= " | posted: #{review.created_at.to_formatted_s(:dmy)}"
+        %td.rating{rowspan: "2"}
+          %div rating
+          %div= review.rating
+      %tr
+        %td= review.content
 
-  
+
