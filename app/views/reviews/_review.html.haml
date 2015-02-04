@@ -1,4 +1,10 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+%table.table.review
+  %tr
+    %td= review.content
+  %tr
+    %td
+      %b= "Rating: #{review.rating}"
+      \|
+      %em= review.author
+      %span.pull-right= "posted: #{time_ago_in_words(review.created_at)} ago."
+  

@@ -1,22 +1,23 @@
-%h1 Listing products
+.col-lg-8.col-lg-offset-2.product-index
+  %h1 Listing products
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Price
-    %th
-    %th
-    %th
-
-  - products.each do |product|
+  %table.table
     %tr
-      %td= product.title
-      %td= product.description
-      %td= product.price
-      %td= link_to 'Show', category_product_path(product.category, product)
-      - if current_user_owner?(product)
-        %td= link_to 'Edit', edit_category_product_path(product.category, product)
-        %td= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+      %th Title
+      %th Description
+      %th Price
+      %th
 
-%br
+    - products.each do |product|
+      %tr
+        %td= product.title
+        %td= product.description
+        %td= product.price
+        %td.pull-right
+          - if current_user_owner?(product)
+            %span= link_to 'Edit', edit_category_product_path(product.category, product)
+            \/
+            %span= link_to 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+            \/
+          %span= link_to 'Show', category_product_path(product.category, product)
+

@@ -10,6 +10,10 @@
 
   %body
     = render 'layouts/header'
+    
+    - if current_page?(root_path) || current_page?('/categories')
+      .big-image
+        = image_tag('city.jpg')
 
     .container-fluid
       .row

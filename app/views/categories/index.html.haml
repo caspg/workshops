@@ -1,20 +1,20 @@
-%h1 Listing categories
+.category-index
+  .col-md-8.col-md-offset-2
+    %h1 Listing categories
 
-%table.table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
+    %table.table
+      %tr
+        %th{ colspan: "2" } NAME
 
-  - categories.each do |category|
-    %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      = if current_user_admin?
-        %td= link_to 'Edit', edit_category_path(category)
-        %td= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+      - categories.each do |category|
+        %tr
+          %td= link_to category.name, category, class: 'list-group-item'
+          - if current_user_admin?
+            %td.pull-right
+              %span= link_to 'Edit', edit_category_path(category)
+              \/
+              %span= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
+    %br
 
-= link_to 'New Category', new_category_path if current_user_admin?
+    = link_to 'New Category', new_category_path, class: 'btn btn-default' if current_user_admin?

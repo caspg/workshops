@@ -1,5 +1,113 @@
 @import "bootstrap";
 
+$background-color: #EEEEEE;
+$primary-color: #3F51B5;
+
+$font-primary-color: #212121;
+// $font-secondary-color:;
+$font-color: #ffffff; // contrast with primary-color
+
+
+$main-color: #673AB7;
+$light-main-color: #D1C4E9;
+$secondary-color: #727272;
+$light-grey: #F4F4F4;
+
+//  UNIVERSAL
+//  --------------------------------------------
+
+body {
+  background-color: $background-color;
+  color: $font-primary-color;
+}
+
+h1,h3, label {
+  color: $font-primary-color;
+}
+
+table {
+  background-color: white;
+  border-collapse: collapse;
+  margin-top: 15px;
+  tr {
+  border: 1px solid $background-color;
+  }
+  a {
+    color: $secondary-color;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.table > tbody > tr > td {
+    width: 100%;
+    border: 0;
+  }
+
+.btn {
+  border-radius: 0;
+  padding: 10px 20px;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.list-group-item {
+  border: 0 !important;
+  background-color: white;
+  border-radius: 0 !important;
+  &:hover {
+    background-color: $background-color !important;
+  }
+}
+
+//  HEADER
+//  --------------------------------------------
+
+.navbar {
+  background-color: $primary-color;
+  border-radius: 0;
+  border: 0;
+  
+}
+
+.navbar-default {
+  .navbar-brand{
+    color: $font-color !important;
+  }
+  .navbar-nav{
+    li {
+      a {
+        color: $font-color !important;
+      }
+    &:hover{
+      background-color: #303F9F;
+      }
+    }
+  }
+}
+
+
+//  CATEGORY INDEX
+//  --------------------------------------------
+
+.big-image {
+  margin-top: -20px;
+  padding: 0;
+  background-color: $primary-color;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+  }
+}
+  
+//  USER'S PROFILE PAGE
+//  --------------------------------------------
+
 .profile {
   background-color: #bdbdbd;
   border: 1px solid black;
@@ -24,5 +132,30 @@
   .rating {
     width: 50px;
     text-align: center;
+  }
+}
+
+//  PRODUCTS
+//  --------------------------------------------
+
+.product-form, .new-review-form {
+  background-color: white;
+  margin-top: 66px;
+  padding: 10px;
+  border: 1px solid $light-grey;
+  h3 {
+    border-bottom: 1px solid $background-color;
+  }
+}
+
+.review {
+  tr {
+    background-color: white !important;
+  }
+}
+
+.product-index {
+  .table > tbody > tr > td {
+    width: auto !important;
   }
 }

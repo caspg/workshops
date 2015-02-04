@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     post   "/login"  => "devise/sessions#create",  :as => :user_session
     get    "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
   end
-  get 'users/:id' => 'users#show'
+  # get 'users/:id' => 'users#show'
+  resources :users, only: :show
 
   root 'categories#index'
 end

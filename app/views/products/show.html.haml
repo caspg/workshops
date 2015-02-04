@@ -1,28 +1,33 @@
 %p#notice= notice
 %p#error= flash[:error]
 
-%p
-  %b Title:
-  = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
+.col-lg-5.col-lg-offset-1
 
-%p
-  %b Category
-  = product.category.name
+  = link_to 'Back', category_products_path, class: 'btn btn-primary'
+  - if user_signed_in? || current_user_owner?
+    = link_to 'Edit', edit_category_product_path(category.id, product.id), class: "btn btn-default"
 
-- if user_signed_in?
-  %h3 Reviews
-  = render 'reviews/form'
-
+  %table.table
+    %tr
+      %td
+        %b= "Product title: #{product.title}".upcase
+    %tr
+      %td= "Description: #{product.description}"
+    %tr
+      %td= "Price: #{product.price}$"
+    %tr
+      %td= "Category: #{product.category.name}"
+  
+  %h3 REVIEWS
   = render reviews
 
-  - if current_user_owner?
-    = link_to 'Edit', edit_category_product_path(category.id, product.id)
-    \|
+  
+.col-lg-5
+  .new-review-form
+    - if user_signed_in?
+      %h3 ADD NEW REVIEW
+      = render 'reviews/form'
 
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+      
+
+  
