@@ -1,1 +1,19 @@
 @import "bootstrap";
+
+.profile {
+  background-color: #bdbdbd;
+  border: 1px solid black;
+  img {
+    padding: 3px;
+    border: 1px solid white;
+    background-color: white;
+  }
+  .activity {
+    text-align: center;
+    div {
+      &:hover {
+        background-color: blue;
+      }
+    }
+  }
+}

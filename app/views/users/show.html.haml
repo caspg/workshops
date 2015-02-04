@@ -1,0 +1,18 @@
+
+.col-md-8.col-md-offset-2.profile
+  .row
+    .col-md-3
+      %img.img-circle(src='http://lorempixel.com/120/120/animals/')
+    .col-md-9
+      %h3= @user.firstname + ' ' + @user.lastname
+      %p= @user.email + ' | joined ' + time_ago_in_words(@user.created_at) + ' ago'
+  .row.activity
+    .col-md-4
+      %h4 user activity:
+    .col-md-4
+      %h4= pluralize(@user.products.count, "product")
+    .col-md-4
+      %h4= pluralize(@user.reviews.count, "review")
+
+
+  
