@@ -1,10 +1,19 @@
-%table.table.review
+/ %tr
+/   %td= review.content
+/ %tr
+/   %td
+/     %b= "Rating: #{review.rating}"
+/     \|
+/     %em= review.author
+/     %span.pull-right= "posted: #{time_ago_in_words(review.created_at)} ago."
+%table.table
   %tr
     %td= review.content
+    %td.rating{rowspan: "2"}
+      %div rating
+      %div= review.rating
   %tr
-    %td
-      %b= "Rating: #{review.rating}"
-      \|
-      %em= review.author
-      %span.pull-right= "posted: #{time_ago_in_words(review.created_at)} ago."
-  
+    %td 
+      %span= review.author
+      %span= " | posted: #{review.created_at.to_formatted_s(:dmy)}"
+        

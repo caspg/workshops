@@ -20,6 +20,10 @@
   
   %h3 REVIEWS
   = render reviews
+  - if reviews.empty?
+    %table.table
+      %tr
+        %td= "This product has no review yet. You can add first." 
 
   
 .col-lg-5

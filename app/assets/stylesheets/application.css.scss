@@ -89,6 +89,12 @@ table {
   }
 }
 
+.dropdown-menu {
+  border-radius: 0;
+  border: 0;
+  background-color: $primary-color;
+}
+
 
 //  CATEGORY INDEX
 //  --------------------------------------------
@@ -129,11 +135,13 @@ table {
 .reviews-list {
   padding: 0;
   margin-top: 40px;
-  .rating {
+}
+.rating {
+    background-color: $primary-color;
+    color: white;
     width: 50px;
     text-align: center;
   }
-}
 
 //  PRODUCTS
 //  --------------------------------------------
@@ -145,12 +153,6 @@ table {
   border: 1px solid $light-grey;
   h3 {
     border-bottom: 1px solid $background-color;
-  }
-}
-
-.review {
-  tr {
-    background-color: white !important;
   }
 }
 
