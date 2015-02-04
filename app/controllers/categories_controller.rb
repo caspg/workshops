@@ -48,7 +48,7 @@ class CategoriesController < ApplicationController
 
     # Redirect user to new_user_session_path if not admin
     def authenticate_admin
-      if !current_user.admin?
+      if !current_user || !current_user.admin?
         redirect_to new_user_session_path
       end
     end
