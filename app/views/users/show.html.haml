@@ -1,20 +1,20 @@
 .col-md-8.col-md-offset-2.profile
   .row
-    .col-md-3
+    .col-md-3.top-row
       %img.img-circle(src='http://lorempixel.com/120/120/animals/')
     .col-md-9
-      %h3= @user.firstname + ' ' + @user.lastname
+      %h3= (@user.firstname + ' ' + @user.lastname).upcase
       %p= @user.email + ' | joined ' + time_ago_in_words(@user.created_at) + ' ago'
   .row.activity
     .col-md-4
-      %h4 user activity:
+      %h4 USER ACTIVITY:
     .col-md-4
-      %h4= pluralize(@user.products.count, "product")
+      %h4= pluralize(@user.products.count, "product").upcase
     .col-md-4
-      %h4= pluralize(@user.reviews.count, "review")
+      %h4= pluralize(@user.reviews.count, "review").upcase
 
 .col-md-8.col-md-offset-2.reviews-list
-  %h4= @user.firstname.titleize + "'s last reviews"
+  %h4= (@user.firstname + "'s last reviews").upcase
   - @reviews.each do |review|
     %table.table.table-bordered
       %tr
