@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 
 gem 'pg'
+gem 'rails_12factor'
 gem 'draper'
 gem 'decent_exposure'
 gem 'decent_decoration'
