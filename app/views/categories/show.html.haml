@@ -1,24 +1,25 @@
-.col-md-8
+.row
+  .col-md-8
+    = link_to 'Back', categories_path, class: 'btn btn-default'
+    = link_to 'Edit', edit_category_path(category), class: 'btn btn-default' if current_user_admin?
 
-  = link_to 'Back', categories_path, class: 'btn btn-default'
-  = link_to 'Edit', edit_category_path(category), class: 'btn btn-default' if current_user_admin?
-
-  %table.table
-    %tr
-      %td 
-        %b= "#{category.name} category".upcase 
-    - category.products.each do |product|
+.row
+  .col-md-8
+    %table.table
       %tr
-        %td= link_to product.title, category_product_path(category, product), class: 'list-group-item'
-    - if category.products.empty?
-      %tr
-        %td= "There are no products in this category. Maybe you will add first one." 
-
-
-.col-md-4
-  - if user_signed_in?
-    .product-form
-      %h3 New product
-      = render 'products/form'
+        %td 
+          %b= "#{category.name} category".upcase 
+      - category.products.each do |product|
+        %tr
+          %td= link_to product.title, category_product_path(category, product), class: 'list-group-item'
+      - if category.products.empty?
+        %tr
+          %td= "There are no products in this category. Maybe you will add first one." 
+          
+  .col-md-4
+    - if user_signed_in?
+      .product-form
+        %h3 New product
+        = render 'products/form'
 
 
