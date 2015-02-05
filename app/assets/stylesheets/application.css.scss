@@ -43,6 +43,7 @@ table {
     border: 0;
   }
   a {
+    transition: all 0.3s;
     color: $secondary-color;
     &:hover {
       color: $secondary-color;
@@ -61,9 +62,11 @@ table {
 }
 
 .btn {
-  border-radius: 0;
+  @include box-shadow;
+  border-radius: 2px;
   border: 0;
   padding: 10px 20px;
+  transition: all 0.3s;
 }
 
 .form-control {
@@ -96,6 +99,7 @@ table {
   .navbar-nav{
     li {
       a {
+        transition: all 0.3s;
         color: $font-color !important;
         &:focus {
           background-color: $dark-primary-color !important;
@@ -142,10 +146,12 @@ table {
   .activity {
     text-align: center;
     div {
-      border-top: 1px solid $background-color;
+      border-top: 1px solid $background-color; 
       border-right: 1px solid $background-color;
+      border-bottom: 0px solid white;
+      transition: all 0.3s;
       &:hover {
-        background-color: $light-primary-color;
+        box-shadow: 0 -6px #FF5722 inset;
       }
     }
   }

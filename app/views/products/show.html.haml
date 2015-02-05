@@ -18,19 +18,20 @@
     %tr
       %td= "Category: #{product.category.name}"
   
+  - if user_signed_in?
+    .new-review-form
+      %h3 ADD NEW REVIEW
+      = render 'reviews/form'
+  
+
+  
+.col-lg-5
   %h3 REVIEWS
   = render reviews
   - if reviews.empty?
     %table.table
       %tr
         %td= "This product has no review yet. You can add first." 
-
-  
-.col-lg-5
-  .new-review-form
-    - if user_signed_in?
-      %h3 ADD NEW REVIEW
-      = render 'reviews/form'
 
       
 
