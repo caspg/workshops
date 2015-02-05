@@ -1,10 +1,13 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header hidden-xs">
       <%= link_to root_path do  %>
         <span class="navbar-brand"><%= AppConfig.workshops_name %></span>
       <% end %>
     </div>
+    <ul class="nav navbar-nav navbar-left visible-xs">
+      <li><%= link_to 'Home', root_path %></li>
+    </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li class="dropdown">

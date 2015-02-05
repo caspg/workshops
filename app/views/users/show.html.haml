@@ -1,8 +1,8 @@
 .col-md-8.col-md-offset-2.profile
   .row
-    .col-md-3.top-row
+    .col-md-3.top-row.col-sm-3
       %img.img-circle(src='http://lorempixel.com/120/120/animals/')
-    .col-md-9
+    .col-md-9.col-sm-9
       %h3= (@user.firstname + ' ' + @user.lastname).upcase
       %p= @user.email + ' | joined ' + time_ago_in_words(@user.created_at) + ' ago'
   .row.activity
