@@ -16,7 +16,7 @@
 .col-md-8.col-md-offset-2.reviews-list
   %h4= (@user.firstname + "'s last reviews").upcase
   - @reviews.each do |review|
-    %table.table.table-bordered
+    %table.table
       %tr
         %td= review.content
         %td.rating{rowspan: "2"}
