@@ -83,6 +83,17 @@ table {
   }
 }
 
+//  Flash messages
+//  --------------------------------------------
+
+.alert-notice {
+  @extend .alert-success
+}
+
+.alert-error, .alert-alert, #error_explanation {
+  @extend .alert-danger
+}
+
 //  HEADER
 //  --------------------------------------------
 
