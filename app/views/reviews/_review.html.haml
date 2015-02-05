@@ -1,11 +1,3 @@
-/ %tr
-/   %td= review.content
-/ %tr
-/   %td
-/     %b= "Rating: #{review.rating}"
-/     \|
-/     %em= review.author
-/     %span.pull-right= "posted: #{time_ago_in_words(review.created_at)} ago."
 %table.table
   %tr
     %td= review.content
@@ -14,6 +6,6 @@
       %div= review.rating
   %tr
     %td 
-      %span= review.author
+      %span= params[:controller] == 'users' ? "product: #{review.product.title}" : review.author
       %span= " | posted: #{review.created_at.to_formatted_s(:dmy)}"
         
