@@ -3,6 +3,7 @@
 $background-color: #EEEEEE;
 $primary-color: #3F51B5;
 $light-primary-color: #C5CAE9;
+$dark-primary-color: #303F9F;
 
 $font-primary-color: #212121;
 $font-color: #ffffff; // contrast with primary-color
@@ -96,9 +97,12 @@ table {
     li {
       a {
         color: $font-color !important;
-      }
-    &:hover{
-      background-color: #303F9F;
+        &:focus {
+          background-color: $dark-primary-color !important;
+        }
+        &:hover{
+          background-color: $dark-primary-color;
+        }
       }
     }
   }
