@@ -6,6 +6,7 @@ $light-primary-color: #C5CAE9;
 $dark-primary-color: #303F9F;
 
 $font-primary-color: #212121;
+$font-secondary-color: #727272; 
 $font-color: #ffffff; // contrast with primary-color
 
 
@@ -15,6 +16,8 @@ $light-main-color: #D1C4E9;
 $secondary-color: #727272;
 $light-grey: #F4F4F4;
 
+$footer-height: 50px;
+
 @mixin box-shadow {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -22,9 +25,15 @@ $light-grey: #F4F4F4;
 //  UNIVERSAL
 //  --------------------------------------------
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-color: $background-color;
   color: $font-primary-color;
+  margin-bottom: 40px + $footer-height;
 }
 
 h1,h3, label {
@@ -104,7 +113,7 @@ table {
   
 }
 
-.navbar-default {
+.nav-top {
   .navbar-brand{
     color: $font-color !important;
   }
@@ -215,3 +224,35 @@ table {
   float: right;
   text-align: right;
 }
+
+//  FOOTER
+//  --------------------------------------------
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: $font-primary-color;
+  height: $footer-height;
+  overflow: hidden;
+  display: inline;
+  color: $font-secondary-color;
+  display: table;
+    .container-fluid {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      p {
+        margin: 0;
+      }
+    }
+  img {
+    margin-left: 10px;
+    height: 25px;
+    width: auto;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
