@@ -200,3 +200,18 @@ table {
     width: auto !important;
   }
 }
+
+//  DEVISE
+//  --------------------------------------------
+
+.devise-form {
+  @include box-shadow;
+  background-color: white;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.devise-links {
+  float: right;
+  text-align: right;
+}
