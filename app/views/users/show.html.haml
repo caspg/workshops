@@ -17,5 +17,8 @@
       %h4= pluralize(user.reviews.count, "review").upcase
 
 .col-md-8.col-md-offset-2.reviews-list
-  %h4= (user.firstname + "'s last reviews").upcase
-  = render reviews
+  - if reviews.empty?
+    %h4= user.firstname + " hasn't added any review yet."
+  - else
+    %h4= (user.firstname + "'s last reviews").upcase
+    = render reviews
