@@ -16,9 +16,7 @@
     - if current_page?(root_path) || current_page?('/categories')
       .big-image
         = image_tag('city.jpg')
-    / <% flash.each do |message_type, message| %>
-    /   <div class="alert alert-<%= message_type %>"><%= message %></div>
-    / <% end %>
+        
     - flash.each do |message_type, message|
       %div{ class: "alert alert-#{message_type}"}= message 
 
