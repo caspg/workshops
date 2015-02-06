@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
 
   # Test if current user is product owner. If not redirect to product.
   def authenticate_owner 
-    if current_user != product.user
+    if current_user != product.user || current_user.admin 
       redirect_to category_product_url(category, product), flash: { error: 'You are not allowed to edit this product.' } 
     end
   end
