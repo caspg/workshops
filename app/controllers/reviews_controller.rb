@@ -11,15 +11,15 @@ class ReviewsController < ApplicationController
 
     if review.save
       product.reviews << review
-      redirect_to category_product_url(product.category, product), success: 'Review was successfully created.'
+      redirect_to category_product_url(product.category, product), flash: { success: 'Review was successfully created.' }
     else
-      redirect_to category_product_url(product.category, product), warning: "Couldn't create review."
+      redirect_to category_product_url(product.category, product), flash: { warning: "Couldn't create review." }
     end
   end
 
   def destroy
     review.destroy
-    redirect_to category_product_url(product.category, product), success: 'Review was successfully destroyed.'
+    redirect_to category_product_url(product.category, product), flash: { success: 'Review was successfully destroyed.' }
   end
 
   private
