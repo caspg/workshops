@@ -6,6 +6,10 @@
       %div= review.rating
   %tr
     %td 
-      %span= params[:controller] == 'users' ? "product: #{review.product.title}" : review.author
+      %span
+        - if params[:controller] == 'users'
+          = "product: #{review.product.title}"
+        - else 
+          = link_to review.author, review.user
       %span= " | posted: #{review.created_at.to_formatted_s(:dmy)}"
         
