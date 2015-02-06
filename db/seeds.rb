@@ -12,7 +12,7 @@ User.create!(firstname: 'Netguru',
 5.times do
   firstname = Faker::Name.first_name
   lastname = Faker::Name.last_name
-  email = Faker::Internet.free_email
+  email = Faker::Internet.free_email(firstname)
   password = 'password'
   User.create!(firstname: firstname,
                lastname: lastname,

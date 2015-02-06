@@ -13,7 +13,7 @@
       %tr
         %td= product.title
         %td= product.description
-        %td= product.price
+        %td= "#{product.price}$"
         %td.pull-right
           - if current_user_owner?(product)
             %span= link_to 'Edit', edit_category_product_path(product.category, product)
