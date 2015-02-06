@@ -1,5 +1,7 @@
-%h1 New category
+.col-lg-6.col-lg-offset-3
+  = link_to 'Back', categories_path, class: 'btn btn-default'
+  .new-review-form
+    %h3 NEW CATEGORY
+    = render 'form'
 
-= render 'form'
 
-= link_to 'Back', categories_path, class: 'btn btn-primary'
